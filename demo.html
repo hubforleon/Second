@@ -6,7 +6,93 @@
 <head>
     <meta charset="UTF-8">
     <title> Document for java script </title>
+
 </head>
+
 <body>
-    <script src="alertmsg.js"></script>    
+    <h1 id="hhh" onclick="getValue()">This is a header part</h1>
+    <p>Click on the header to alert its value</p>
+
+    <div id='dv1' , class='dv' , name='usr'> 我是赵建国 dv1 </div>
+    <div id='dv2' , class='dv' , name='usr' , onclick="getValue('dv2')"> 我是王冬梅 </div>
+    <div id='dv3' , class='dv' , name='usr' , onclick="getValue('dv3')"> 我是赵世玉 </div>
+    <div id='dv4' , class='dv' , name='usr' , onclick="getValue('dv4')"> 我是lion </div>
+    <input type='button' , id='newtag' , value='wab' />
+    <input type='button' , id='new' , value='this is is a button for input type' />
+
+    <input type='button' , id='newbutton' , class='in' , name='usr' , value='is a bu' />
+
+    <script>
+        document.getElementById("newtag").onclick = function () {
+            var appendnode = document.createElement("input");
+            document.body.appendChild(appendnode);
+        }
+        function showobj() {
+            var obj = [name = 'lion', age = 50, sex = 'm'];
+            console.log("the direct value method is:")
+            for (ats in obj) {
+                console.log(obj[ats]);
+            }
+
+            var m = new Object();
+            m.name = 'xo';
+            m.age = 21;
+            m.sex = 'm'
+            console.log("the new object method is:")
+            for (ats in m) {
+                console.log(m[ats]);
+            }
+
+            var p = new Man('zhang', 20, 'f');
+            console.log("the new man method is:")
+            for (ats in p) {
+                console.log(p[ats]);
+            }
+        }
+        function Man(uname, uage, usex) {
+            this.name = uname;
+            this.age = uage;
+            this.sex = usex;
+        }
+
+
+        var colors = ['red', 'green', 'blue', 'yellow'];
+        // var colorkey=[('red':'china'),('green':'brasil'),('blue':'Netherlands'),('yellow':'France')]
+        var currentcolorindex = 0;  //'red'
+        function getValue(inputid) {
+            var change = confirm("confirm?");
+            if (change) {
+                var dv1 = document.getElementById(inputid);
+                dv1.innerHTML = '<b>(Hello China ' + inputid + ') </b>';
+                dv1.style.fontSize = '' + (currentcolorindex + 1) * 10 + 'px';
+                dv1.style.fontFamily = 'Arial Narrow'
+                dv1.style.color = colors[currentcolorindex];
+                dv1.style.cssFloat = 'right'
+                currentcolorindex++;
+                currentcolorindex %= colors.length;
+            }
+            console.log('hash: '+document.location.hash);
+            console.log('href: '+document.location.href);
+            console.log('path: '+document.location.path);
+            console.log('pathname: '+document.location.pathname);
+            console.log('protocol: '+document.location.protocol);
+            console.log('port: '+document.location.port);
+            console.log('search: '+document.location.search);
+            // for (i in colorkey){
+            //     console.log("colorkey[i]: "+colorkey[i]);
+            //     console.log("i: "+i);      
+            //     console.log("length: "+colorkey.length);
+            //     console.log()          
+            // }
+            var item = { 'red': 'china', 'blue': 'korean', 'green': 'brasil', 'yellow': 'netherlands', 'pink': 'france', 'black': 'america' };
+
+            // showobj();
+        }
+    </script>
+
+
 </body>
+<script type="text/javascript"></script>
+<script>
+
+</script>
